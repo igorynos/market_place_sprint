@@ -4,9 +4,8 @@ from fastapi import FastAPI
 from app import models
 from app.database import Base, engine
 
-models = models
+# models = models
 
-Base.metadata.drop_all(engine)
 Base.metadata.create_all(engine)
 
 app = FastAPI()
