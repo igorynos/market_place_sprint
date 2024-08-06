@@ -6,7 +6,7 @@
   </component>
   <component name="DBNavigator.Project.DataEditorManager">
     <record-view-column-sorting-type value="BY_INDEX" />
-    <value-preview-text-wrapping value="true" />
+    <value-preview-text-wrapping value="false" />
     <value-preview-pinned value="false" />
   </component>
   <component name="DBNavigator.Project.DatabaseBrowserManager">
@@ -16,8 +16,43 @@
     <loaded-nodes />
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
-    <connection id="c6ea6dd0-d80e-44d2-8227-96884949ce24">
-      <console name="market_place_sprint_db" type="STANDARD" schema="" session="Main" />
+    <connection id="3f503144-5440-4f64-b64b-1af72208c482">
+      <console name="Connection" type="STANDARD" schema="public" session="Pool"><![CDATA[-- Добавление городов в таблицу
+INSERT INTO cities('name_city') VALUES ('Москва');
+INSERT INTO cities('name_city') VALUES ('Санкт-Петербург');
+INSERT INTO cities('name_city') VALUES ('Новосибирск');
+INSERT INTO cities('name_city') VALUES ('Екатеринбург');
+INSERT INTO cities('name_city') VALUES ('Нижний Новгород');
+INSERT INTO cities('name_city') VALUES ('Казань');
+INSERT INTO cities('name_city') VALUES ('Челябинск');
+INSERT INTO cities('name_city') VALUES ('Омск');
+INSERT INTO cities('name_city') VALUES ('Самара');
+INSERT INTO cities('name_city') VALUES ('Ростов-на-Дону');
+INSERT INTO cities('name_city') VALUES ('Уфа');
+INSERT INTO cities('name_city') VALUES ('Красноярск');
+INSERT INTO cities('name_city') VALUES ('Пермь');
+INSERT INTO cities('name_city') VALUES ('Воронеж');
+INSERT INTO cities('name_city') VALUES ('Волгоград');
+INSERT INTO cities('name_city') VALUES ('Саратов');
+INSERT INTO cities('name_city') VALUES ('Краснодар');
+INSERT INTO cities('name_city') VALUES ('Тюмень');
+INSERT INTO cities('name_city') VALUES ('Барнаул');
+INSERT INTO cities('name_city') VALUES ('Ижевск');
+INSERT INTO cities('name_city') VALUES ('Иркутск');
+INSERT INTO cities (name_city) VALUES ('Хабаровск');
+INSERT INTO cities (name_city) VALUES ('Мурманск');
+INSERT INTO cities (name_city) VALUES ('Сочи');
+INSERT INTO cities (name_city) VALUES ('Томск');
+INSERT INTO cities (name_city) VALUES ('Калуга');
+INSERT INTO cities (name_city) VALUES ('Владивосток');
+INSERT INTO cities (name_city) VALUES ('Ярославль');
+INSERT INTO cities (name_city) VALUES ('Тула');
+INSERT INTO cities (name_city) VALUES ('Оренбург');
+INSERT INTO cities (name_city) VALUES ('Астрахань');
+INSERT INTO cities (name_city) VALUES ('Севастополь');
+INSERT INTO cities (name_city) VALUES ('Сургут');
+INSERT INTO cities (name_city) VALUES ('Смоленск');
+INSERT INTO cities (name_city) VALUES ('Псков');]]></console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseEditorStateManager">
@@ -27,7 +62,10 @@
     <open-files />
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
-    <connection id="43725b30-eced-4b88-b05c-3c5a9afc0de1" />
+    <connection id="3f503144-5440-4f64-b64b-1af72208c482" />
+  </component>
+  <component name="DBNavigator.Project.DatasetFilterManager">
+    <filter-actions connection-id="3f503144-5440-4f64-b64b-1af72208c482" dataset="public.cities" active-filter-id="EMPTY_FILTER" />
   </component>
   <component name="DBNavigator.Project.ExecutionManager">
     <retain-sticky-names value="false" />
@@ -44,11 +82,14 @@
     <last-used-operator value="EQUAL" />
     <filters />
   </component>
+  <component name="DBNavigator.Project.ScriptExecutionManager" clear-outputs="true">
+    <recently-used-interfaces />
+  </component>
   <component name="DBNavigator.Project.Settings">
     <connections>
-      <connection id="c6ea6dd0-d80e-44d2-8227-96884949ce24" active="true" signed="true">
+      <connection id="3f503144-5440-4f64-b64b-1af72208c482" active="true" signed="true">
         <database>
-          <name value="market_place_sprint_db" />
+          <name value="Connection" />
           <description value="" />
           <database-type value="POSTGRES" />
           <config-type value="BASIC" />
@@ -532,5 +573,9 @@
         </visibility-settings>
       </environment>
     </general-settings>
+  </component>
+  <component name="DBNavigator.Project.StatementExecutionManager">
+    <execution-variables />
+    <execution-variable-types />
   </component>
 </project>
