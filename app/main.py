@@ -4,10 +4,13 @@ import uvicorn
 from fastapi import FastAPI
 
 from app import brocker  # noqa
+from app.config import load_config
 from routers import orders as OrderRouter
 from routers import products as ProductRouter
 from routers import shops as ShopRouter
 from routers import users as UserRouter
+
+config = load_config()
 
 app = FastAPI()
 
@@ -18,7 +21,7 @@ app.include_router(ShopRouter.router, prefix='/shops')
 
 
 def start_app():
-    uvicorn.run(app, host='localhost', port=8000)
+    uvicorn.run(app, host=config['uvicorn_host'], port=config['uvicorn_port'])
 
 
 if __name__ == "__main__":

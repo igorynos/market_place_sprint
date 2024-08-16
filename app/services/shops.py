@@ -21,6 +21,10 @@ def create_shop(data: shops.Shops, db):
     return shop
 
 
+def get_shops(db):
+    return db.query(Shops).all()
+
+
 def get_shop(id: int, db):
     return db.query(Shops).filter(Shops.id == id).first()
 

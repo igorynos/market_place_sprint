@@ -4,6 +4,10 @@ from app.dto import users
 from app.models.users import Users
 
 
+def get_users(db):
+    return db.query(Users).all()
+
+
 def create_user(data: users.Users, db):
     user = Users(first_name=data.first_name,
                  second_name=data.second_name,

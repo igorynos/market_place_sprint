@@ -1,7 +1,13 @@
 import pika
 
+from app.config import load_config
+
+config = load_config()
 # создание подключения(connection) и канала(channel)
-connection = pika.BlockingConnection(pika.ConnectionParameters(host='localhost'))
+connection = pika.BlockingConnection(pika.ConnectionParameters(
+    host=config['rmq_host'],
+    port=config['rmq_port']
+))
 channel = connection.channel()
 
 

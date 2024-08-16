@@ -20,6 +20,10 @@ def create_product(data: products.Products, db):
     return product
 
 
+def get_products(db):
+    return db.query(Products).all()
+
+
 def get_product(id: int, db):
     return db.query(Products).filter(Products.id == id).first()
 

@@ -8,6 +8,11 @@ from app.services import products as ProductService
 router = APIRouter()
 
 
+@router.get('/', tags=['product'])
+async def get_all(db: Session = Depends(get_db)):
+    return ProductService.get_products(db)
+
+
 @router.post('/', tags=['product'])
 async def create(data: ProductDTO.Products = None, db: Session = Depends(get_db)):
     return ProductService.create_product(data, db)

@@ -1,7 +1,7 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 
 
 class Products(BaseModel):
     title: str
     description: str
-    price: float
+    price: float = Field(ge=0)

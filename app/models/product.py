@@ -1,6 +1,6 @@
 from datetime import datetime
 
-from sqlalchemy import Column, Integer, String, DateTime, ForeignKeyConstraint, Text
+from sqlalchemy import Column, Integer, String, DateTime, Text, Float
 
 from app.database import Base
 
@@ -11,11 +11,6 @@ class Products(Base):
     id = Column(Integer(), primary_key=True)
     title = Column(String(30))
     description = Column(Text())
-    price = Column(Integer())
-    grade_id = Column(Integer())
+    price = Column(Float())
     date_time_create = Column(DateTime(), default=datetime.now())
     date_time_update = Column(DateTime(), default=datetime.now(), onupdate=datetime.now())
-
-    __table_args__ = (
-        ForeignKeyConstraint(['grade_id'], ['grade.id']),
-    )

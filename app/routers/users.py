@@ -8,6 +8,11 @@ from app.services import users as UserService
 router = APIRouter()
 
 
+@router.get('/', tags=['user'])
+async def get_all(db: Session = Depends(get_db)):
+    return UserService.get_users(db)
+
+
 @router.post('/', tags=['user'])
 async def create(data: UserDTO.Users = None, db: Session = Depends(get_db)):
     return UserService.create_user(data, db)

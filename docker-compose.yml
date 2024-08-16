@@ -1,31 +1,24 @@
-version: '3'
+version: '3.8'
 services:
   app:
     image: market_sprint
     ports:
-      - "8000:8000"
+      - "8001:8001"
     depends_on:
-      - rabbitmq
       - postgres
+      - rabbitmq
     environment:
       - PYTHONPATH=/usr/src/market_place_sprint
-      - DATABASE_URL=postgres://user:password@postgres:5432/mydatabase
   rabbitmq:
     image: rabbitmq:management
     ports:
-      - "5672:5672"
-      - "15673:15672"
-
+      - 5672:5672
+      - "15672:15672"
   postgres:
     image: postgres:latest
     environment:
-      POSTGRES_DB: mydatabase
-      POSTGRES_USER: user
-      POSTGRES_PASSWORD: password
+      POSTGRES_DB: market_place_sprint_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 22552552000
     ports:
       - "5432:5432"
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
-
-volumes:
-  postgres_data:

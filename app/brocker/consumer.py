@@ -4,6 +4,7 @@ import pika
 from sqlalchemy import desc
 
 from app.brocker.producer import message_orders
+from app.config import load_config
 from app.database import SessionLocal
 from app.dto.orders import Orders as OrdersDTO
 from app.models.cards import Cards
@@ -12,6 +13,8 @@ from app.models.product import Products
 from app.models.shops import Shops
 from app.models.users import Users
 from app.services import orders as ServiceOrder
+
+config = load_config()
 
 
 # принимает сообщение(body) от exchange: orders по routingkey: processing_orders
@@ -67,7 +70,8 @@ def notification_orders_callback(ch, method, properties, body):
 # Создаёт подключение(connection), канал(channel), и обрабатывает сообщения с модуля producer
 # запускается в pool_list модуля main.py
 def main():
-    connection = pika.BlockingConnection(pika.ConnectionParameters('localhost'))
+    connection = pika.BlockingConnection(pika.ConnectionParameters(host=config['rmq_host'],
+                                                                   port=config['rmq_port']))
     channel = connection.channel()
 
     channel.queue_declare(queue='new_orders')

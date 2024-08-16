@@ -53,6 +53,7 @@ INSERT INTO cities (name_city) VALUES ('Севастополь');
 INSERT INTO cities (name_city) VALUES ('Сургут');
 INSERT INTO cities (name_city) VALUES ('Смоленск');
 INSERT INTO cities (name_city) VALUES ('Псков');]]></console>
+      <console name="market_place_sprint_db" type="STANDARD" schema="" session="Main" />
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseEditorStateManager">
@@ -66,6 +67,7 @@ INSERT INTO cities (name_city) VALUES ('Псков');]]></console>
   </component>
   <component name="DBNavigator.Project.DatasetFilterManager">
     <filter-actions connection-id="3f503144-5440-4f64-b64b-1af72208c482" dataset="public.cities" active-filter-id="EMPTY_FILTER" />
+    <filter-actions connection-id="3f503144-5440-4f64-b64b-1af72208c482" dataset="public.products" active-filter-id="EMPTY_FILTER" />
   </component>
   <component name="DBNavigator.Project.ExecutionManager">
     <retain-sticky-names value="false" />
@@ -89,7 +91,7 @@ INSERT INTO cities (name_city) VALUES ('Псков');]]></console>
     <connections>
       <connection id="3f503144-5440-4f64-b64b-1af72208c482" active="true" signed="true">
         <database>
-          <name value="Connection" />
+          <name value="market_place_sprint_db" />
           <description value="" />
           <database-type value="POSTGRES" />
           <config-type value="BASIC" />

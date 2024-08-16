@@ -8,6 +8,11 @@ from app.services import shops as ShopService
 router = APIRouter()
 
 
+@router.get('/', tags=['shop'])
+async def get_all(db: Session = Depends(get_db)):
+    return ShopService.get_shops(db)
+
+
 @router.post('/', tags=['shop'])
 async def create(data: ShopDTO.Shops = None, db: Session = Depends(get_db)):
     return ShopService.create_shop(data, db)
